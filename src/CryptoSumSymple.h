@@ -12,10 +12,10 @@
 
 #include <Arduino.h>
 
-inline String split(String msg, String separador) {
+inline String split(String msg, String separador, String * result) {
   //  função com o proposito de funcionar semelhante ao split do javascript
   int comprimento =  (msg.length() + 1);
-  String result[comprimento];
+  // String result[comprimento];
   int cont = 0;
   for (int i = 0; i < comprimento; i++) {
     if ((String)msg[i] == (String)separador) {
@@ -29,7 +29,7 @@ inline String split(String msg, String separador) {
       result[cont] += msg[i];
     }
   }
-  return * result;
+  return *result;
 }
 inline int splitToInt(String msg, String separador, int *varBuffer) {
   //  funcção com o proposito de funcionar semelhante ao split do javascript
